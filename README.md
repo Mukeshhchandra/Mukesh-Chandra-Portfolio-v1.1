@@ -4,7 +4,7 @@
 
 Personal portfolio of **Naga Mukesh Chandra Naidu Rudravaram**, a Data & BI Analyst in the San Francisco Bay Area. SQL, Python and Power BI across retail, supply chain and sales analytics.
 
-**Live site:** https://mukeshhchandra.github.io/Mukesh-Chandra-Portfolio-v1.1/ (once GitHub Pages is switched on)
+**Live site:** https://mukeshhchandra.github.io/Mukesh-Chandra-Portfolio-v1.1/
 
 ![Portfolio home page](docs/preview.jpg)
 
