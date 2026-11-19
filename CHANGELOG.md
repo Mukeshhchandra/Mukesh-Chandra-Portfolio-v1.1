@@ -7,6 +7,15 @@
 - 45+ stores shown as one square per store; ~50% and ~35% shown as before/after bars
 - Decorative window dots removed
 
+### Phone layout
+- Tighter section spacing and type sizes; the page is about 20% shorter to scroll on a phone
+- Hero results start closed on phones, so the first screen stays short
+- Name stays visible in the nav; About photo smaller, facts two-up
+- Skills filter as a tidy 2 x 2 grid; compact skill groups and timeline
+- Resume controls on one row; Contact actions as three full-width buttons
+- All links and buttons at least 44 px tall on touch screens
+- Static background and lighter blur on phones for smoother scrolling; quicker section reveals
+
 ## v1.1 — November 2026
 
 First published version of the redesigned portfolio.
