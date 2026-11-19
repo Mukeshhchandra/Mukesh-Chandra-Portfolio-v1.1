@@ -313,7 +313,7 @@ h4 {
 /* =============================================================== hero */
 .hero { padding-top: clamp(7.5rem, 13vw, 9.5rem); padding-bottom: clamp(3rem, 6vw, 4.5rem); min-height: min(100svh, 60rem); display: flex; align-items: center; }
 .hero > .wrap { width: 100%; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .hero-id { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.6rem; }
 .avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: center 30%; border: 2px solid color-mix(in srgb, var(--accent) 55%, transparent); flex-shrink: 0; }
 .hero-id strong { display: block; color: var(--fg); font: 600 1.02rem/1.25 var(--f-display); }
@@ -326,52 +326,62 @@ h4 {
 .badge .dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #34d399; }
 .badge .dot::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid #34d399; opacity: 0; animation: ping 2.4s var(--ease) infinite; }
 @keyframes ping { 0% { transform: scale(0.6); opacity: 0.7; } 100% { transform: scale(1.6); opacity: 0; } }
-.hero h1 { font: 700 clamp(2.3rem, 4.6vw, 4rem)/1.04 var(--f-display); letter-spacing: -0.04em; margin: 0 0 1.25rem; }
+.hero h1 { font: 700 clamp(2.3rem, 4.4vw, 3.7rem)/1.05 var(--f-display); letter-spacing: -0.04em; margin: 0 0 1.25rem; }
 .grad { background: linear-gradient(100deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero-sub { font-size: clamp(1.02rem, 1.5vw, 1.15rem); max-width: 50ch; color: var(--fg-soft); }
 .hero-sub b { color: var(--fg); font-weight: 600; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
 
-/* The dashboard card: real figures from the LTIMindtree work, and the data
-   path behind them drawn as a live pipeline. */
+/* Impact card: each result opens to explain itself in plain words, with a
+   before/after comparison or a count of stores. Built on <details>, so it
+   works with no script at all. */
 .dash { padding: 1rem; border-radius: 28px; }
-.dash-top { display: flex; align-items: center; gap: 0.75rem; padding: 0.2rem 0.4rem 0.9rem; border-bottom: 1px solid var(--line); }
-.dash-dots { display: flex; gap: 6px; }
-.dash-dots i { width: 10px; height: 10px; border-radius: 50%; background: color-mix(in srgb, var(--fg) 18%, transparent); }
-.dash-dots i:first-child { background: var(--accent); }
-.dash-title { font-size: 0.85rem; font-weight: 600; color: var(--fg); }
-.dash-when { margin-left: auto; font: 500 0.66rem/1 var(--f-mono); letter-spacing: 0.08em; color: var(--accent); padding: 0.35rem 0.6rem; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); }
-.kpis { display: grid; gap: 0.6rem; margin: 1rem 0 0.2rem; }
-.kpi { display: grid; grid-template-columns: 6.5rem 1fr; align-items: center; column-gap: 1rem; padding: 1.1rem 1.2rem; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
-.kpi b { display: block; font: 700 clamp(1.8rem, 3vw, 2.4rem)/1 var(--f-display); letter-spacing: -0.03em; color: var(--fg); }
-.kpi span { display: block; font-size: 0.9rem; line-height: 1.4; color: var(--fg-soft); }
-.kpi-bar { grid-column: 1 / -1; height: 4px; border-radius: 4px; margin-top: 0.85rem; background: color-mix(in srgb, var(--fg) 10%, transparent); overflow: hidden; }
-.kpi-bar i { display: block; height: 100%; border-radius: inherit; background: var(--btn-bg); transform-origin: 0 50%; }
-.js .kpi-bar i { transform: scaleX(0); }
-.js.ready .kpi-bar i { transform: scaleX(1); transition: transform 1.4s var(--ease) 0.7s; }
-.flow-box { padding: 0.9rem 0.6rem 0.5rem; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
-.flow-label { margin: 0 0.4rem 0.4rem; font: 500 0.64rem/1.2 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); }
-.flow { width: 100%; height: auto; }
-.flow .node { fill: color-mix(in srgb, var(--fg) 6%, transparent); stroke: var(--line-strong); }
-.flow .node.hub { fill: color-mix(in srgb, var(--accent) 16%, transparent); stroke: color-mix(in srgb, var(--accent) 55%, transparent); }
-.flow .node.out { fill: color-mix(in srgb, var(--accent-2) 16%, transparent); stroke: color-mix(in srgb, var(--accent-2) 55%, transparent); }
-.flow text { fill: var(--fg); font: 600 13px var(--f-body); }
-.flow text.sub { fill: var(--fg-muted); font: 500 10.5px var(--f-mono); letter-spacing: 0.04em; }
-.flow .wire { fill: none; stroke: var(--line-strong); stroke-width: 1.5; }
-.flow .pulse { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 10 190; animation: pulse 3s linear infinite; }
-.flow .pulse.p2 { animation-delay: -1s; }
-.flow .pulse.p3 { animation-delay: -2s; }
-.flow .pulse.out { stroke: var(--accent-2); stroke-dasharray: 10 90; animation-duration: 1.5s; }
-@keyframes pulse { from { stroke-dashoffset: 200; } to { stroke-dashoffset: 0; } }
+.dash-top { display: flex; align-items: center; gap: 0.75rem; padding: 0.35rem 0.5rem 0.9rem; border-bottom: 1px solid var(--line); }
+.dash-title { font: 600 1rem/1.3 var(--f-display); color: var(--fg); }
+.dash-when { margin-left: auto; white-space: nowrap; font: 500 0.66rem/1 var(--f-mono); letter-spacing: 0.06em; color: var(--accent); padding: 0.4rem 0.65rem; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); }
+.dash-hint { margin: 0.85rem 0.5rem 0; font-size: 0.8rem; color: var(--fg-muted); }
+.kpis { display: grid; gap: 0.6rem; margin-top: 0.7rem; }
+.kpi { border-radius: 16px; background: var(--panel); border: 1px solid var(--line); transition: border-color 0.3s ease, background 0.3s ease; }
+.kpi:hover { border-color: var(--line-strong); }
+.kpi[open] { border-color: color-mix(in srgb, var(--accent) 45%, transparent); background: var(--panel-strong); }
+.kpi summary {
+  display: grid; grid-template-columns: 6.2rem minmax(0, 1fr) auto; align-items: center; column-gap: 1rem;
+  padding: 1rem 1.1rem; cursor: pointer; list-style: none; border-radius: 16px;
+}
+.kpi summary::-webkit-details-marker { display: none; }
+.kpi b { font: 700 clamp(1.8rem, 3vw, 2.3rem)/1 var(--f-display); letter-spacing: -0.03em; color: var(--fg); }
+.kpi-l { font-size: 0.93rem; line-height: 1.35; color: var(--fg-soft); transition: color 0.2s ease; }
+.kpi summary:hover .kpi-l, .kpi[open] .kpi-l { color: var(--fg); }
+.chev { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line); color: var(--fg-muted); transition: transform 0.35s var(--ease), border-color 0.3s ease, color 0.3s ease; }
+.chev::before { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); }
+.kpi[open] .chev { transform: rotate(180deg); border-color: var(--accent); color: var(--accent); }
+.kpi-more { padding: 0.1rem 1.1rem 1.15rem; animation: fadeUp 0.4s var(--ease); }
+.kpi-more p { font-size: 0.87rem; line-height: 1.55; margin: 0.6rem 0 0; color: var(--fg-soft); }
+.kpi-more strong { color: var(--fg); font-weight: 600; }
+.kpi-tools { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.85rem; }
+.kpi-tools li { font-size: 0.72rem; padding: 0.22rem 0.6rem; border-radius: 999px; border: 1px solid var(--line); color: var(--fg-muted); }
+.viz-label { margin: 0 0 0.45rem; font: 500 0.62rem/1.2 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); }
+/* 45+ stores, one square each. */
+.stores { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); gap: 4px; }
+.stores i { aspect-ratio: 1; border-radius: 3px; background: var(--btn-bg); opacity: 0.9; animation: pop 0.35s var(--ease) both; animation-delay: calc(var(--n) * 12ms); }
+.stores .plus { display: grid; place-items: center; font: 700 0.85rem/1 var(--f-display); color: var(--accent); }
+@keyframes pop { from { transform: scale(0); opacity: 0; } }
+/* Before / after bars. */
+.compare { display: grid; gap: 0.45rem; }
+.cmp { display: grid; grid-template-columns: 3.3rem minmax(0, 1fr) 3rem; align-items: center; gap: 0.6rem; font-size: 0.78rem; color: var(--fg-muted); }
+.cmp em { font-style: normal; text-align: right; color: var(--fg); font-weight: 600; font-variant-numeric: tabular-nums; }
+.track { height: 9px; border-radius: 9px; background: color-mix(in srgb, var(--fg) 9%, transparent); overflow: hidden; }
+.track i { display: block; height: 100%; width: var(--w); border-radius: inherit; background: color-mix(in srgb, var(--fg) 32%, transparent); transform-origin: 0 50%; animation: grow 0.9s var(--ease) both 0.1s; }
+.cmp.after .track i { background: var(--btn-bg); animation-delay: 0.4s; }
+@keyframes grow { from { transform: scaleX(0); } }
 
-.tools { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: clamp(2.5rem, 5vw, 4rem); padding-top: 1.5rem; border-top: 1px solid var(--line); }
-.tools-label { font: 500 0.68rem/1 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); margin-right: 0.5rem; }
-.tools li { font-size: 0.84rem; font-weight: 500; color: var(--fg-soft); padding: 0.4rem 0.8rem; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); transition: border-color 0.25s ease, color 0.25s ease, transform 0.3s var(--ease); }
-.tools li:hover { border-color: var(--accent); color: var(--fg); transform: translateY(-2px); }
-.tools ul { display: contents; }
 @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; } .dash { max-width: 36rem; } }
 @media (max-width: 560px) {
-  .kpi { grid-template-columns: 5rem 1fr; }
+  .kpi summary { grid-template-columns: 4.7rem minmax(0, 1fr) auto; column-gap: 0.75rem; padding: 0.9rem; }
+  .kpi-more { padding: 0.1rem 0.9rem 1rem; }
+  .dash-top { flex-wrap: wrap; row-gap: 0.5rem; }
+  .dash-when { margin-left: 0; }
+  .stores { grid-template-columns: repeat(12, minmax(0, 1fr)); }
   .hero-cta .btn { flex: 1 1 100%; }
 }
 
@@ -692,16 +702,49 @@ html:has(.case:popover-open) { overflow: hidden; }
         </div>
       </div>
 
-      <figure class="dash glass" data-enter style="--d:3; margin:0" aria-label="Results from my retail and supply chain analytics work at LTIMindtree">
+      <figure class="dash glass" data-enter style="--d:3; margin:0" aria-label="My impact at LTIMindtree, explained">
         <div class="dash-top">
-          <span class="dash-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="dash-title">Results at LTIMindtree</span>
-          <span class="dash-when">2023&ndash;24</span>
+          <span class="dash-title">My impact at LTIMindtree</span>
+          <span class="dash-when">Data Analyst &middot; 2023&ndash;24</span>
         </div>
+        <p class="dash-hint">Tap a result to see what it means and how I did it.</p>
         <div class="kpis">
-          <div class="kpi"><b>45+</b><span>retail stores covered by my Power BI dashboards</span><div class="kpi-bar" aria-hidden="true"><i style="width:90%"></i></div></div>
-          <div class="kpi"><b>~50%</b><span>less weekly reporting effort</span><div class="kpi-bar" aria-hidden="true"><i style="width:50%"></i></div></div>
-          <div class="kpi"><b>~35%</b><span>faster financial reporting turnaround</span><div class="kpi-bar" aria-hidden="true"><i style="width:35%"></i></div></div>
+          <details class="kpi" name="impact" open>
+            <summary><b>45+</b><span class="kpi-l">retail stores on one set of dashboards</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="kpi-more">
+              <p class="viz-label">One square per store</p>
+              <div class="stores" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i><i style="--n:6"></i><i style="--n:7"></i><i style="--n:8"></i><i style="--n:9"></i><i style="--n:10"></i><i style="--n:11"></i><i style="--n:12"></i><i style="--n:13"></i><i style="--n:14"></i><i style="--n:15"></i><i style="--n:16"></i><i style="--n:17"></i><i style="--n:18"></i><i style="--n:19"></i><i style="--n:20"></i><i style="--n:21"></i><i style="--n:22"></i><i style="--n:23"></i><i style="--n:24"></i><i style="--n:25"></i><i style="--n:26"></i><i style="--n:27"></i><i style="--n:28"></i><i style="--n:29"></i><i style="--n:30"></i><i style="--n:31"></i><i style="--n:32"></i><i style="--n:33"></i><i style="--n:34"></i><i style="--n:35"></i><i style="--n:36"></i><i style="--n:37"></i><i style="--n:38"></i><i style="--n:39"></i><i style="--n:40"></i><i style="--n:41"></i><i style="--n:42"></i><i style="--n:43"></i><i style="--n:44"></i><span class="plus">+</span></div>
+              <p><strong>What it means:</strong> I built and maintained Power BI dashboards that tracked sales, inventory and operations for more than 45 retail stores in one place.</p>
+              <p><strong>Why it mattered:</strong> Business teams could look up store performance themselves, instead of waiting for someone to prepare a report.</p>
+              <ul class="kpi-tools"><li>Power BI</li><li>DAX</li><li>Power Query</li><li>SQL</li></ul>
+            </div>
+          </details>
+          <details class="kpi" name="impact">
+            <summary><b>~50%</b><span class="kpi-l">less time spent on weekly reports</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="kpi-more">
+              <p class="viz-label">Weekly reporting effort</p>
+              <div class="compare" aria-hidden="true">
+                <div class="cmp"><span>Before</span><span class="track"><i style="--w:100%"></i></span><em>100%</em></div>
+                <div class="cmp after"><span>After</span><span class="track"><i style="--w:50%"></i></span><em>~50%</em></div>
+              </div>
+              <p><strong>What it means:</strong> The work that went into weekly reporting dropped to about half of what it was.</p>
+              <p><strong>How:</strong> The dashboards gave teams self-service access to their own numbers, so far less had to be put together by hand every week.</p>
+              <ul class="kpi-tools"><li>Power BI</li><li>Advanced Excel</li></ul>
+            </div>
+          </details>
+          <details class="kpi" name="impact">
+            <summary><b>~35%</b><span class="kpi-l">faster financial reports</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="kpi-more">
+              <p class="viz-label">Time to deliver a financial report</p>
+              <div class="compare" aria-hidden="true">
+                <div class="cmp"><span>Before</span><span class="track"><i style="--w:100%"></i></span><em>100%</em></div>
+                <div class="cmp after"><span>After</span><span class="track"><i style="--w:65%"></i></span><em>~65%</em></div>
+              </div>
+              <p><strong>What it means:</strong> Financial reports were ready about a third sooner than before.</p>
+              <p><strong>How:</strong> I automated the recurring steps that used to be done by hand: pulling the data, transforming and checking it, and generating the report.</p>
+              <ul class="kpi-tools"><li>SQL</li><li>Python</li><li>Power BI</li></ul>
+            </div>
+          </details>
         </div>
       </figure>
     </div>
@@ -1294,6 +1337,8 @@ html:has(.case:popover-open) { overflow: hidden; }
   root.classList.add('js');
   // Next frame, so the hidden start state paints before the entrance runs.
   requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('ready'); }); });
+  // Safety net: if frames are delayed (background tab, screenshot tools), still reveal the hero.
+  setTimeout(function () { root.classList.add('ready'); }, 900);
 
   /* ------------------------------------------------------------- toast */
   var toastEl = $('#toast'), toastTimer;

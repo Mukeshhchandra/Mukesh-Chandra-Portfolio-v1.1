@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Hero
+- The results card is now an interactive "My impact at LTIMindtree" panel: each result opens to explain what it means and how it was achieved, in plain words
+- 45+ stores shown as one square per store; ~50% and ~35% shown as before/after bars
+- Decorative window dots removed
+
 ## v1.1 — November 2026
 
 First published version of the redesigned portfolio.
