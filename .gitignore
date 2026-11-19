@@ -1,0 +1,13 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and tool folders
+.vscode/
+.idea/
+.claude/
+*.swp
+
+# Local-only images that are not part of the site
+images/mukesh-outdoor.webp
